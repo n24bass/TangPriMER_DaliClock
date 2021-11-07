@@ -74,7 +74,7 @@ module data_out
       end
    endfunction // blend_endpoints
 
-   function [24:0] rle_to_endpoints(input [5:0] rle0, input [5:0] rle1, input [5:0] rle2, input [5:0] rle3);
+   function [23:0] rle_to_endpoints(input [5:0] rle0, input [5:0] rle1, input [5:0] rle2, input [5:0] rle3);
       begin
          if (rle3 != 0)
            rle_to_endpoints = {rle0, rle0 + rle1, rle0 + rle1 + rle2, rle0 + rle1 + rle2 + rle3};
@@ -83,7 +83,7 @@ module data_out
       end
    endfunction // rle_to_endpoints
 
-   function [24:0] font_rle(input [3:0] digit, input [5:0] yofs);
+   function [23:0] font_rle(input [3:0] digit, input [5:0] yofs);
       begin
          case ({digit,yofs})
            // 0
